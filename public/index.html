@@ -63,7 +63,7 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      function handleImages(blobInfo) {
+      function handleImage(blobInfo) {
         const formData = new FormData()
         formData.set('image', blobInfo.blob())
         return fetch("/upload-image", {
@@ -78,7 +78,7 @@
       tinymce.init({
         selector: "textarea#articleBody",
         skin: 'bootstrap', //The TinyMCE Bootstrap skin
-        images_upload_handler: handleImages,
+        images_upload_handler: handleImage,
         setup: (editor) => {
           // Apply the focus effect
           editor.on("init", () => {
